@@ -4,8 +4,8 @@ public class GCD_LCM {
     static int GCD(int a, int b) {
         while (b % a != 0) {
             int rem = b % a;
-            a = b;
-            b = rem;
+            a = rem;
+            b = a;
         }
         return a;
     }
@@ -19,9 +19,9 @@ public class GCD_LCM {
     }
 
     static int LCM(int a, int b) {
-        
-        int LCM = (a * b )/GCD(a, b); 
-        
+
+        int LCM = (a * b) / GCD(a, b);
+
         return LCM;
     }
 
@@ -31,8 +31,6 @@ public class GCD_LCM {
 
         System.out.println(GCD_Recursive(500, 250));
 
-        System.out.println(LCM(2,8));
-
+        System.out.println(LCM(2, 8));
     }
-
 }
