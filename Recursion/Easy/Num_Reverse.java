@@ -19,7 +19,5 @@ public class Num_Reverse {
         Reverse_Num(num);
         System.out.println();
         System.out.println(newnum);
-
     }
-
 }
