@@ -35,15 +35,16 @@ public class CountNumOfZeros {
         System.out.println();
 
         int num = 901000, count = 0;
+
         int ans1 = countZeroes(num);
 
         int ans2 = countZeroByRecursion(num, count);
 
         if (ans1 != 0) {
-        System.out.println("Total Number of Zeroes Present in " + num + " are: " +
-        ans1);
+            System.out.println("Total Number of Zeroes Present in " + num + " are: " +
+                    ans1);
         } else {
-        System.out.println("No Zero present inside " + num);
+            System.out.println("No Zero present inside " + num);
         }
 
         if (ans2 != 0) {
