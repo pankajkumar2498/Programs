@@ -1,6 +1,6 @@
 package Recursion.Easy;
 
-// 1342. Number of Steps to Reduce a Number to Zero
+// LeetCode 1342: Number of Steps to Reduce a Number to Zero
 
 // Given an integer num, return the number of steps to reduce it to zero.
 
