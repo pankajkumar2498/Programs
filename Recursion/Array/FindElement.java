@@ -34,25 +34,44 @@ public class FindElement {
 
     // Find all the indexes of target element by uisng external List
     static ArrayList<Integer> list = new ArrayList<>();
+
     static void findAllIndex(int[] arr, int target, int index) {
-        if( index == arr.length ){
-            return;
-        }
-        if( arr[index] == target ){
-            list.add(index);
-        }
-        findAllIndex(arr, target, index+1);    
+    if (index == arr.length) {
+    return;
     }
-    
+    if (arr[index] == target) {
+    list.add(index);
+    }
+    findAllIndex(arr, target, index + 1);
+    }
+
     // Find all the indexes of target element by using List as a parameter.
     static ArrayList<Integer> findAllIndexes(int[] arr, int target, int index, ArrayList<Integer> list) {
-        if( index == arr.length ){
+        if (index == arr.length) {
             return list;
         }
-        if( arr[index] == target ){
+        if (arr[index] == target) {
             list.add(index);
         }
-        return findAllIndexes(arr, target, index+1, list);    
+        return findAllIndexes(arr, target, index + 1, list);
+    }
+
+    // Find all the indexes of target element by not using List as a paramter
+    static ArrayList<Integer> findAllIndexes1(int[] arr, int target, int index) {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+
+        if (index == arr.length) {
+            return list;
+        }
+
+        // this will contain answer for this function only
+        if (arr[index] == target) {
+            list.add(index);
+        }
+        
+        ArrayList<Integer> ansFromBelowCalls = findAllIndexes1(arr, target, index + 1);
+        list.addAll(ansFromBelowCalls);
+        return list;
     }
 
     public static void main(String[] args) {
@@ -62,18 +81,20 @@ public class FindElement {
 
         int target = 2;
 
-        System.out.println(findElementFromStart(arr, target, 0));
+        // System.out.println(findElementFromStart(arr, target, 0));
 
-        System.out.println(findElementFromLast(arr, target, arr.length - 1));
+        // System.out.println(findElementFromLast(arr, target, arr.length - 1));
 
-        System.out.println(findElementIndex(arr, target, 0));
-        
-        findAllIndex(arr, target, 0);
+        // System.out.println(findElementIndex(arr, target, 0));
 
-        System.out.println(list);
+        // findAllIndex(arr, target, 0);
+        // System.out.println(list);
 
-        ArrayList<Integer> ans = findAllIndexes(arr, target, 0, new ArrayList<>());
-        System.out.println(ans);
-        
+        // ArrayList<Integer> ans = findAllIndexes(arr, target, 0, new ArrayList<>());
+        System.out.println(findAllIndexes(arr, target, 0, new ArrayList<>()));
+
+        // ArrayList<Integer> ans1 = findAllIndexes1(arr, target, 0);
+        System.out.println(findAllIndexes1(arr, target, 0));
+
     }
 }
