@@ -1,4 +1,4 @@
-package Recursion.Array;
+package Array;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -20,17 +20,17 @@ public class MultiDimensionalArray {
         }
 
         // Output Scanning Elements
-        // for (int row = 0; row < arr2D.length; row++) {
-        //     for (int col = 0; col < arr2D[row].length; col++) {
-        //         System.out.print(arr2D[row][col]+" ");
-        //     }
-        //     System.out.println();
-        // }
+        for (int row = 0; row < arr2D.length; row++) {
+            for (int col = 0; col < arr2D[row].length; col++) {
+                System.out.print(arr2D[row][col]+" ");
+            }
+            System.out.println();
+        }
         
         // using for Array toString() function for inner loop
-        // for (int row = 0; row < arr2D.length; row++) {
-        //     System.out.println(Arrays.toString(arr2D[row]));
-        // }
+        for (int row = 0; row < arr2D.length; row++) {
+            System.out.println(Arrays.toString(arr2D[row]));
+        }
        
         // print 2D array using foreach loop
         for (int[] element : arr2D) {
