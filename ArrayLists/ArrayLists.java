@@ -8,7 +8,7 @@ public class ArrayLists {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
-       
+
         ArrayList<Integer> list = new ArrayList<>();
 
         list.add(34);
@@ -24,10 +24,9 @@ public class ArrayLists {
         list.remove(2);
         System.out.println(list);
 
-
         // ArrayList using Scanner input
         ArrayList<Integer> al = new ArrayList<>();
-         int size = 5;
+        int size = 5;
         System.out.println("Enter Elements in ArrayList: ");
         for (int i = 0; i < size; i++) {
             al.add(scan.nextInt());
@@ -36,6 +35,6 @@ public class ArrayLists {
         for (int i = 0; i < size; i++) {
             System.out.print(al.get(i) + " ");
         }
-
+        scan.close();
     }
 }
