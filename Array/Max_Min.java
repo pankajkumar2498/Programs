@@ -1,5 +1,7 @@
 package Array;
 
+import java.util.Arrays;
+
 public class Max_Min {
 
     static int Max(int[] arr) {
@@ -56,9 +58,46 @@ public class Max_Min {
         return min;
     }
 
+    static void swap(int[] arr, int index1, int index2) {
+        int temp = arr[index1];
+        arr[index1] = arr[index2];
+        arr[index2] = temp;
+    }
+
+    // Reverse Array without Recursion
+    static void reverse(int[] arr) {
+        int start = 0;
+        int end = arr.length - 1;
+
+        while (start < end) {
+            swap(arr, start, end);
+            start++;
+            end--;
+        }
+    }
+
+    // Reverse Array by Recursion
+    static int[] reverseRecursive(int[] arr, int start, int end) {
+
+        if (start > end) {
+            return new int[] { -1 };
+        } else {
+            swap(arr, start, end);
+            return reverseRecursive(arr, start + 1, end - 1);
+        }
+    }
+
     public static void main(String[] args) {
 
-        int[] arr = {23, 43, 54, 67, 76, 87};
+        int[] arr = { 23, 43, 67, 76, 87 };
+
+        // To sort the Array using Arrays.sort method
+        // Arrays.sort(arr);
+        // System.out.print("Sorted Array: ");
+        // for (int i : arr) {
+        //     System.out.print(i + " ");
+        // }
+
 
         System.out.println(Min(arr));
 
@@ -68,5 +107,22 @@ public class Max_Min {
 
         System.out.println(MaxRange(arr, 1, 4));
 
+        
+        reverse(arr);
+
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
+
+        System.out.println(Arrays.toString(arr));
+
+        System.out.println();
+
+        int[] rev = reverseRecursive(arr, 0, arr.length - 1);
+        for (int i : rev) {
+            System.out.print(i + " ");
+        }
+
     }
+
 }
