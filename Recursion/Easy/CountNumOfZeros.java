@@ -34,7 +34,7 @@ public class CountNumOfZeros {
     public static void main(String[] args) {
         System.out.println();
 
-        int num = 901000, count = 0;
+        int num = 91, count = 0;
 
         int ans1 = countZeroes(num);
 
@@ -44,13 +44,13 @@ public class CountNumOfZeros {
             System.out.println("Total Number of Zeroes Present in " + num + " are: " +
                     ans1);
         } else {
-            System.out.println("No Zero present inside " + num);
+            System.out.println("No Zero present inside: " + num);
         }
 
         if (ans2 != 0) {
             System.out.println("Total Number of Zeroes Present in " + num + " are: " + ans2);
         } else {
-            System.out.println("No Zero present inside " + num);
+            System.out.println("No Zero present inside: " + num);
         }
     }
 }
