@@ -19,10 +19,9 @@ public class LinearSearchString {
     public static void main(String[] args) {
 
         String str = "I am Pankaj Maurya";
-        
         System.out.println(Arrays.toString(str.toCharArray()));     // Converts String into Character Array.
       
-        char target = 'u';
+        char target = 'u'; 
 
         System.out.println(linearSearchString(str, target));
 

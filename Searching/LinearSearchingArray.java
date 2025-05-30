@@ -63,7 +63,7 @@ public class LinearSearchingArray {
 
         return new int[] { -1, -1 };
     }
-    
+
     // Minimumm Element in 2D Array
     static int minmumIn2DArray(int[][] arr) {
 
@@ -86,10 +86,10 @@ public class LinearSearchingArray {
         int[] arr = { 2, 4, 12, 32, 5, 66, 87 };
 
         int[][] array = {
-            {23, 34, 3, 16, 6},
-            {10, 14},
-            {2, 32 , 4, 76, 89, 71},
-            {87}
+                { 23, 34, 3, 16, 6 },
+                { 10, 14 },
+                { 2, 32, 4, 76, 89, 71 },
+                { 87 }
         };
 
         int target = 89;
@@ -98,7 +98,7 @@ public class LinearSearchingArray {
         System.out.println(linearSearch1(arr, target));
         System.out.println(linearSearchRange(arr, target, 1, 5));
 
-        int[] ans = linerSearchIn2DArray( array, target);
+        int[] ans = linerSearchIn2DArray(array, target);
         System.out.println(Arrays.toString(ans));
 
         System.out.println(minmumIn2DArray(array));
