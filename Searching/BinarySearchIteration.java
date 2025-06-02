@@ -1,56 +1,52 @@
-import java.util.Scanner;
-
 public class BinarySearchIteration {
 
     public static void main(String[] args) {
 
-        Scanner scan = new Scanner(System.in);
+        int[] arr = { -5, -2, 0, 23, 46, 78, 79, 81, 85 }; // Ascending Order
 
-        System.out.print("Enter num of element in Array: ");
-        int num = scan.nextInt();
+        // int[] arr = { 85, 81, 80, 67, 7, -1, -20, -27 }; // Descending Order
 
-        int arr[] = new int[num];
-
-        System.out.print("Enter Elements of Array: ");
-
-        for(int i = 0; i < arr.length ; i++) {
-            arr[i] = scan.nextInt();
-        }
-
-        System.out.print("Enter Key to Search: ");
-        
-        int key = scan.nextInt();
-
-        int result = BinarySearch( arr, key );
+        int target = -5;
+        int result = binarySearch(arr, target);
 
         // System.out.println(result);
 
-        if ( result != -1 ) {
+        if (result != -1) {
             System.out.println("Element found at index: " + result);
         } else {
             System.out.println("Element not Found.");
         }
-
-        
-        scan.close();
     }
 
-    public static int BinarySearch( int arr[], int key ) {
+    public static int binarySearch(int arr[], int key) {
         int low = 0;
-        int high = arr.length-1;
-        
-        while(low <= high) { 
+        int high = arr.length - 1;
 
-            int mid = (low + high)/2;
-            
-            if ( key == arr[mid] ) 
+        if (arr == null || arr.length == 0)
+            return -1;
+
+        // for checking Array is Sorted in Ascending order or Descending
+        boolean isAsc = arr[low] < arr[high];
+
+        while (low <= high) {
+
+            int mid = low + (high - low) / 2;
+
+            if (key == arr[mid])
                 return mid;
-            
-            if (key < arr[mid]) {
-                high = mid - 1;
-            }
-             else {
-                low = mid + 1;
+
+            if (isAsc) {
+                if (key < arr[mid]) {
+                    high = mid - 1;
+                } else {
+                    low = mid + 1;
+                }
+            } else {
+                if (key > arr[mid]) {
+                    high = mid - 1;
+                } else {
+                    low = mid + 1;
+                }
             }
         }
         return -1;
