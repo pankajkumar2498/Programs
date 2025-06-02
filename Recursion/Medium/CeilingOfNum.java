@@ -22,11 +22,11 @@ public class CeilingOfNum {
             int mid = start + (end - start) / 2;
 
             if (target == arr[mid]) {
-                return arr[mid];
-            } else if (target > arr[mid]) {
-                start = mid + 1;
-            } else {
+                return arr[mid]; // Exact match is the floor
+            } else if (target < arr[mid]) {
                 end = mid - 1;
+            } else {
+                start = mid + 1;
             }
         }
 
@@ -34,10 +34,24 @@ public class CeilingOfNum {
         return arr[start];
     }
 
+    // Simple approach
+    public static int ceilNumber(int[] a, int b) {
+        for (int i = 0; i < a.length; i++) {
+            if (b == a[i]) {
+                return b;
+            } else {
+                if (Math.max(a[i], b) != b) {
+                    return a[i];
+                }
+            }
+        }
+        return -1;
+    }
+
     public static void main(String[] args) {
-        int[] arr1 = {23, 45, 65, 87, 90, 98};
+        int[] arr1 = { 23, 45, 65, 87, 90, 98 };
         int[] arr2 = {};
-        int[] arr3 = {5, 10, 15};
+        int[] arr3 = { 5, 10, 15 };
 
         // Normal case
         System.out.println("Ceiling of 89: " + findCeilNum(arr1, 89));

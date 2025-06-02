@@ -34,9 +34,9 @@ public class FloorOfNum {
     }
 
     public static void main(String[] args) {
-        int[] arr1 = {23, 45, 65, 87, 90, 98};
+        int[] arr1 = { 23, 45, 65, 87, 90, 98 };
         int[] arr2 = {};
-        int[] arr3 = {5, 10, 15};
+        int[] arr3 = { 5, 10, 15 };
 
         // Exact match
         System.out.println("Floor of 87: " + findFloorNum(arr1, 87));
