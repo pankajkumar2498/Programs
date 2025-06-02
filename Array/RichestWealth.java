@@ -28,17 +28,24 @@ package Array;
 
 public class RichestWealth {
     static int maximumWealth(int[][] accounts) {
-        int max = Integer.MIN_VALUE;
+        int maxSum = Integer.MIN_VALUE;
 
-
-
-
-        return max;
+        for (int row = 0; row < accounts.length; row++) {
+            int sum = 0;
+            for (int col = 0; col < accounts[row].length; col++) {
+                sum += accounts[row][col];
+            }
+            
+            if (sum > maxSum) {
+                maxSum = sum;
+            }
+        }
+        return maxSum;
     }
 
     public static void main(String[] args) {
 
-        int[][] accounts = { { 1, 2, 3 }, { 3, 2, 1 } };
+        int[][] accounts = { { 1, 2, 3 }, { 3, 2, 1 }, {55} };
 
         System.out.println(maximumWealth(accounts));
     }
