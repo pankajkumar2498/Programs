@@ -1,5 +1,3 @@
-package LeetCode;
-
 // Find the position of element in Sorted Array inside Infinite Array i.e, now you can't use Array.length method 
 
 public class FindPositionOfElementInfiniteArray {
