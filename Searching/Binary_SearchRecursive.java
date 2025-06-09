@@ -6,7 +6,7 @@ public class Binary_SearchRecursive {
 
         int target = 43;
 
-        int ans = BinarySearch(arr, target, 0, arr.length - 1);
+        int ans = binarySearch(arr, target, 0, arr.length - 1);
         // System.out.println(ans);
         
         if(ans != -1){
@@ -16,7 +16,7 @@ public class Binary_SearchRecursive {
         }
     }
 
-    public static int BinarySearch(int[] arr, int target, int start, int end) {
+    static int binarySearch(int[] arr, int target, int start, int end) {
 
         if (start > end) {
             return -1;
@@ -26,9 +26,9 @@ public class Binary_SearchRecursive {
         if (target == arr[mid]) {
             return mid;
         } else if (target < arr[mid]) {
-            return BinarySearch(arr, target, start, mid - 1);
+            return binarySearch(arr, target, start, mid - 1);
         } else {
-            return BinarySearch(arr, target, mid + 1, end);
+            return binarySearch(arr, target, mid + 1, end);
         }
     }
 }

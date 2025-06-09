@@ -1,8 +1,5 @@
-package Recursion.Easy;
-
-// LeetCode 744: Find Smallest letter gretaer than target
+// (LeetCode 744): Find Smallest letter greater than target
 // You are given an array of characters letters that is sorted in non-decreasing order, and a character target. There are at least two different characters in letters.
-
 // Return the smallest character in letters that is lexicographically greater than target. If such a character does not exist, return the first character in letters.
 
 // Example 1:
@@ -21,7 +18,6 @@ package Recursion.Easy;
 // Output: "x"
 // Explanation: There are no characters in letters that is lexicographically greater than 'z' so we return letters[0].
  
-
 // Constraints:
 
 // 2 <= letters.length <= 104
@@ -30,7 +26,7 @@ package Recursion.Easy;
 // letters contains at least two different characters.
 // target is a lowercase English letter.
 
-class LeetCode744 {
+class _744_nextGreatestLetter {
     static char nextGreatestLetter(char[] letters, char target) {
         
         int start = 0;
