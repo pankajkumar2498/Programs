@@ -21,19 +21,20 @@ public class ReverseArray {
 
         if (start >= end) {
             return new int[] { -1 };
-        } else {
+        } 
             swap1(arr, start, end);
             return reverseRecursive(arr, start + 1, end - 1);
-        }
+        
     }
 
-    // Swap two indexes
+    // Swap two indexes using third variable
     static void swap(int[] arr, int index1, int index2) {
         int temp = arr[index1];
         arr[index1] = arr[index2];
         arr[index2] = temp;
     }
 
+    // Swap two indexes without using third variable
     static void swap1(int[] arr, int index1, int index2) {
         arr[index1] = arr[index1] + arr[index2];
         arr[index2] = arr[index1] - arr[index2];
