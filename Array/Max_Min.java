@@ -45,7 +45,7 @@ public class Max_Min {
         return min;
     }
 
-    // Find Minimum using BinarySearch
+    // Find Minimum using BinarySearch ---> Input Array is in Sorted order
     public int findMin(int[] nums) {
 
         int start = 0;
@@ -97,7 +97,7 @@ public class Max_Min {
     // Reverse Array by Recursion
     static int[] reverseRecursive(int[] arr, int start, int end) {
 
-        if (start > end) {
+        if (start >= end) {
             return new int[] { -1 };
         } else {
             swap(arr, start, end);
