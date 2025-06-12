@@ -71,7 +71,7 @@ public class FindUnion_MergeSortedArray {
 
         ArrayList<Integer> list = FindUnion(arr1, arr2);
 
-        System.out.println("list of arr1 and arr2 is ");
+        System.out.println("Union elements of arr1 and arr2 is ");
 
         for (int item : list)
             System.out.print(item + " ");
