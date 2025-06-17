@@ -1,62 +1,65 @@
-// import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Arrays;
 
-// public class MergeSorting {
+public class MergeSorting {
 
-//     public static void main(String[] args) {
+    public static void main(String[] args) {
 
-//         Scanner scan = new Scanner(System.in);
+        int[] arr = { 20, 12, 5, 15, 27, 34 };
 
-//         System.out.print("Enter num of element in Array: ");
-//         int n = scan.nextInt();
+        System.out.println("Before Sorting: " + Arrays.toString(arr));
+        MergeSorting.mergeSort(arr, 0, arr.length - 1);
+        System.out.println("After Merge Sorting: " + Arrays.toString(arr));
 
-//         int arr[] = new int[n];
+    }
 
-//         System.out.print("Enter Elements of Array: ");
+    public static void mergeSort(int arr[], int low, int high) {
 
-//         for (int i = 0; i < arr.length; i++) {
-//             arr[i] = scan.nextInt();
-//         }
+        if (low >= high)
+            return;
 
-//         MergeSorting.mergeSort(arr, 0, arr.length);
+        int mid = low + (high - low) / 2;
 
-//         scan.close();
+        mergeSort(arr, low, mid); // for left Side Array
+        mergeSort(arr, mid + 1, high); // for Right Side Array
+        merge(arr, low, mid, high); // for merging arrays.
 
-//     }
+    }
 
-//      public static void mergeSort(int arr[], int lb, int ub) {
+    public static void merge(int arr[], int low, int mid, int high) {
 
-//         if (lb < ub) {
+        ArrayList<Integer> list = new ArrayList<>();
 
-//             int mid = (lb + ub)/2;
-//             mergeSort(arr, lb, mid); // for Left Side Array
-//             mergeSort(arr, mid + 1, ub); // for Right Side Array
+        int left = low;
+        int right = mid + 1;
 
-//             merge(arr, lb, mid, ub);     // for merging arrays.
+        // compare both side arrays, whosoever is small then add to temporary list.
+        while (left <= mid && right <= high) {
+            if (arr[left] <= arr[right]) {
+                list.add(arr[left]);
+                left++;
+            } else {
+                list.add(arr[right]);
+                right++;
+            }
+        }
 
-//         }
+        // if left side elements are remaining then add to list
+        while (left <= mid) {
+            list.add(arr[left]);
+            left++;
+        }
 
-//     }
+        // if right side elements are remaining then add to list
+        while (right <= high) {
+            list.add(arr[right]);
+            right++;
+        }
 
-   
+        // copy temporary into original array
+        for (int i = low; i <= high; i++) {
+            arr[i] = list.get(i - low);
+        }
 
-//     public static void merge( int arr[], int lb, int mid, int ub ){
-
-//         int i = lb ;
-//         int j = mid +1 ;
-//         int k = ub ;
-
-//         if( i <= mid && j <= ub ){
-//             if( arr[i] < arr[j] ){
-//                int b[k] = arr[i];
-//                 i++;
-//             }else{ 
-//                 b[i] = arr[j]
-//             }
-
-//         }
-
-//     }
-
-
-
-// }
+    }
+}
