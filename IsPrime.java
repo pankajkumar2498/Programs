@@ -34,17 +34,17 @@ class IsPrime {
     }
 
     // getting how many prime numbers are there below any number
-    static void seivePrime(int n, boolean[] primes) {
+    static void seivePrime(int num, boolean[] primes) {
 
-        for (int i = 2; i * i <= n; i++) {
+        for (int i = 2; i * i <= num; i++) {
             if (!primes[i]) {
-                for (int j = i * 2; j <= n; j += i) {
+                for (int j = i * 2; j <= num; j += i) {
                     primes[j] = true;
                 }
             }
         }
 
-        for (int i = 2; i <= n; i++) {
+        for (int i = 2; i <= num; i++) {
             if (!primes[i]) {
                 System.out.print(i + " ");
             }
