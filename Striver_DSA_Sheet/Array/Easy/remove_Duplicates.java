@@ -2,6 +2,7 @@ package Striver_DSA_Sheet.Array.Easy;
 
 import java.util.HashSet;
 
+// Note: Before Removing elements, sort the array
 // Brute Force Approach
 public class remove_Duplicates {
     static int removeDuplicate(int[] arr) {
@@ -23,7 +24,7 @@ public class remove_Duplicates {
         return size;
     }
 
-    // Optimal Approcah
+    // Optimal Approcah - this will work only when array is sorted
     static int removeDuplicates(int[] nums) {
 
         // Take two pointers i and j; place i at 0th index and j at (i+1) index
