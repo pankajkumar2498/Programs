@@ -51,10 +51,10 @@ public class RotatedArray {
         System.out.println("Original Array: " + Arrays.toString(arr));
 
         // rotateByLeft(arr, k);
-        // System.out.println("Left Rotation: " + Arrays.toString(arr));
+        // System.out.println("Left Rotation of Array by " + k +" places: "+ Arrays.toString(arr));
 
         rotateByRight(arr, k);
-        System.out.println("Right Rotation: " + Arrays.toString(arr));
+        System.out.println("Right Rotation of Array by " + k +" places: "+ Arrays.toString(arr));
 
     }
 
