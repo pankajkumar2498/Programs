@@ -1,5 +1,3 @@
-package Practice;
-
 public class secondSmallest {
 
     static int secondSmallestNum(int[] arr) {
