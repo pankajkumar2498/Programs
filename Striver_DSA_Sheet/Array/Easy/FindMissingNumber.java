@@ -17,41 +17,40 @@ package Striver_DSA_Sheet.Array.Easy;
 
 public class FindMissingNumber {
     
-    // this function works only for sorted array
-    // static int findMissingNumber(int[] arr) {
-    //        Arrays.sort(arr);
-    //     for (int i = 0; i < arr.length; i++) {
-    //         int j = i + 1;
-
-    //         if (arr[j] - arr[i] != 1) {
-    //             return arr[i] + 1;
-    //         }
-    //     }
-    //     return -1;
-    // }
-
-
     // Optimal Approch --> T.C = O(N); S.C = O(1)
-    static int findMissingNumber1(int[] arr, int N) {
-
-        //Find Summation of first N numbers:
-        int totalSum = (N * (N + 1)) / 2;
-        
-        // Find Sum of All the elements of array.
-        int sum = 0;
-        for (int num : arr) {
-            sum += num;
+    static int missingNumber(int[] nums) {
+        int Arraysum = 0;
+        for (int i = 0; i < nums.length; i++) {
+            Arraysum += nums[i];
         }
 
-        return totalSum-sum;
+        int expectedSum = (nums.length * (nums.length + 1)) / 2;
+
+        return expectedSum - Arraysum;
+    }
+
+    // Perform XOR Operation --> Faster and Safe
+    static int missingNumber1(int[] nums) {
+        int xor = 0;
+        
+        // XOR all elements from 0 to N --> Range[0,N]
+        for (int i = 0; i <= nums.length; i++) {
+            xor ^= i;
+        }
+
+        // XOR all elements in Array.
+        for (int num : nums) {
+            xor ^= num;
+        }
+        return xor;
     }
 
     public static void main(String[] args) {
         int[] arr = { 0, 1, 2, 4, 5, 6 };
         int N = arr.length; // N is the number of elements in Array
         
-        System.out.println("Missing Number in given Array is: " + findMissingNumber1(arr, N));
-
+        System.out.println("Missing Number in given Array is: " + missingNumber(arr));
+        System.out.println("Missing Number in given Array is: " + missingNumber1(arr));
     }
 
 }
