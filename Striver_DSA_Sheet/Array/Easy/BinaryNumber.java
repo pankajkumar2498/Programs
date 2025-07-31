@@ -2,29 +2,26 @@ package Striver_DSA_Sheet.Array.Easy;
 
 public class BinaryNumber {
 
-    private static void findBinary(int num) {
+    private static void findBinaryNumber(int num) {
         if (num == 0) {
-            System.out.println("Binary Number: 0");
+            System.out.println("Binary Number: "+ num);
             return;
         }
 
         StringBuilder binary = new StringBuilder();
 
         while (num > 0) {
-            int rem = num % 2;
-            binary.append(rem);
+            binary.append(num % 2);
             num = num / 2;
         }
 
         // Since digits are added in reverse order, reverse the string
-        binary.reverse();
-
-        System.out.println("Binary Number: " + binary.toString());
+        System.out.println("Binary Number: " + binary.reverse());
     }
 
     public static void main(String[] args) {
-        int num = 12;
+        int num = 102;
 
-        findBinary(num);  // Output: Binary Number: 1001
+        findBinaryNumber(num);
     }
 }
