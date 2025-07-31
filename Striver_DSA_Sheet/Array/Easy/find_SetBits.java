@@ -2,8 +2,9 @@ package Striver_DSA_Sheet.Array.Easy;
 
 public class find_SetBits {
 
+    // Find Set Bits in any Number or find in how many times we can reduced number to 0
     // Optimal Approach --> O(N)
-    static void findSetBits1(int num) {
+        static void findSetBits1(int num) {
         int count = 0;
         while (num != 0) {
             num = num & (num - 1);
